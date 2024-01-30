@@ -1,6 +1,9 @@
 import { IFormUserEntity } from '../../../../entity/form/IFormUser.entity';
-import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity({
+  name: 'formuser',
+})
 export class FormUserTypeorm implements IFormUserEntity {
   @PrimaryGeneratedColumn()
   Id: number;
