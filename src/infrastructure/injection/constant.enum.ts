@@ -1,0 +1,15 @@
+export enum MYSQL_ENV {
+  HOST = 'MYSQL_HOST',
+  PORT = 'MYSQL_PORT',
+  USERNAME = 'MYSQL_USERNAME',
+  PASSWORD = 'MYSQL_PASSWORD',
+  DATABASE = 'MYSQL_DATABASE',
+}
+
+export enum CONNECTION {
+  MYSQL_ECOMMERCE = 'MYSQL_ECOMMERCE',
+}
+
+export enum DIALECT {
+  mysql = 'mysql',
+}
