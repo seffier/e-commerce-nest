@@ -1,3 +1,4 @@
-export class UserPasswordOutputDto {
+export class UserLoginOutputDto {
   passwordHash: string;
+  uniqueKey: string;
 }

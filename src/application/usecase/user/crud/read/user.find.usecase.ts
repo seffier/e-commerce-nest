@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { UserRepository } from '../../../../repository/user/user.repository';
 import { UserFindByEmailDto } from '../../dto/input/user.findByEmail.dto';
 import { SuccessDto } from '../../../dto/success.dto';
-import { UserPasswordOutputDto } from '../../dto/output/user.password.output.dto';
+import { UserLoginOutputDto } from '../../dto/output/user.password.output.dto';
 
 @Injectable()
 export class UserFindUsecase {
@@ -25,9 +25,7 @@ export class UserFindUsecase {
     );
   }
 
-  async getPassword(
-    inputDto: UserFindByEmailDto,
-  ): Promise<UserPasswordOutputDto> {
+  async login(inputDto: UserFindByEmailDto): Promise<UserLoginOutputDto> {
     return this.userRepository.createQueryBuilder('user').then((query) =>
       query
         .select('user.UniqueKey', 'uniqueKeyAlias')
@@ -37,9 +35,9 @@ export class UserFindUsecase {
         .andWhere('user.isDeleted = 0') // Optionally check if the user is not deleted (if applicable)
         .getRawOne()
         .then((user) => {
-          console.log('user: ', user);
           return {
             passwordHash: user.passwordHashAlias,
+            uniqueKey: user.uniqueKeyAlias,
           };
         }),
     );
