@@ -1,12 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { FormUserRepository } from '../../../../repository/form/user/form.user.repository';
-import { FormUserFindByEmailInputDto } from '../../dto/form.user.find.input.dto';
+import { FormUserFindByEmailInputDto } from '../../dto/input/form.user.findByEmail.input.dto';
+import { SuccessDto } from '../../../dto/success.dto';
 
 @Injectable()
 export class FormUserFindUsecase {
   constructor(private formUserRepository: FormUserRepository) {}
 
-  async findByEmail(inputDto: FormUserFindByEmailInputDto): Promise<boolean> {
+  async findByEmail(
+    inputDto: FormUserFindByEmailInputDto,
+  ): Promise<SuccessDto> {
     return this.formUserRepository.createQueryBuilder('fu').then((query) =>
       query
         .select('fu.Id', 'IdAlias')
@@ -15,7 +18,9 @@ export class FormUserFindUsecase {
         })
         .execute()
         .then((email) => {
-          return !!email[0];
+          return {
+            success: !!email[0],
+          };
         }),
     );
   }

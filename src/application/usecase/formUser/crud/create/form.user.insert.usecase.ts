@@ -1,6 +1,6 @@
 import { FormUserRepository } from '../../../../repository/form/user/form.user.repository';
 import { IdDto } from '../../../dto/id.dto';
-import { FormUserInsertInputDto } from '../../dto/form.user.insert.input.dto';
+import { FormUserInsertInputDto } from '../../dto/input/form.user.insert.input.dto';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

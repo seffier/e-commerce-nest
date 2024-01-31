@@ -17,7 +17,7 @@ export class AuthRegisterService {
     return this.formUserFindUsecase
       .findByEmail({ email: req.email })
       .then((emailExists) => {
-        if (emailExists)
+        if (emailExists.success)
           throw new HttpException(ApiErrorEnum.USER_ALREADY_EXISTS, 400);
         return this.formUserInsertUsecase
           .register({
