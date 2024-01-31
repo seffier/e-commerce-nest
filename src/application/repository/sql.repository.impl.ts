@@ -38,4 +38,8 @@ export abstract class SqlRepositoryImpl<Entity> {
   async delete(id: number): Promise<DeleteResult> {
     return this.repository.delete(id);
   }
+
+  async createQueryBuilder(alias?: string) {
+    return this.repository.createQueryBuilder(alias);
+  }
 }
