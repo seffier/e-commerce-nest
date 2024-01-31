@@ -5,5 +5,5 @@ export interface IFormUserEntity extends IBaseSchemaEntity {
   Email: string;
   PasswordHash: string;
   PhoneNumber: string;
-  UpdatedDate: string;
+  UpdatedDate: Date;
 }

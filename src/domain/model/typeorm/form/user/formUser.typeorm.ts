@@ -1,5 +1,6 @@
 import { IFormUserEntity } from '../../../../entity/form/IFormUser.entity';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { UserTypeorm } from '../../user/user.typeorm';
 
 @Entity({
   name: 'formuser',
@@ -16,5 +17,7 @@ export class FormUserTypeorm implements IFormUserEntity {
   @Column()
   PhoneNumber: string;
   @Column()
-  UpdatedDate: string;
+  UpdatedDate: Date;
+  @OneToMany(() => UserTypeorm, (user) => user.formUser)
+  user: UserTypeorm[];
 }
