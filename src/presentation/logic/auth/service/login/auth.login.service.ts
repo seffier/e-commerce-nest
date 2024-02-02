@@ -2,17 +2,19 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { UserFindUsecase } from '../../../../../application/usecase/user/crud/read/user.find.usecase';
 import { AuthLoginRequestDto } from '../../dto/request/register/auth.login.request.dto';
 import { PasswordHashFetcher } from '../../../../../infrastructure/hash/hash.abstract.service';
-import { UniqueKeyDto } from '../../../../../application/usecase/dto/uniqueKey.dto';
 import { ApiErrorEnum } from '../../../../enum/api.error.enum';
+import { JwtService } from '@nestjs/jwt';
+import { AuthLoginResponseDto } from '../../dto/response/auth.login.response.dto';
 
 @Injectable()
 export class AuthLoginService {
   constructor(
     protected userFindUsecase: UserFindUsecase,
     protected passwordHashService: PasswordHashFetcher,
+    protected jwtService: JwtService,
   ) {}
 
-  async login(req: AuthLoginRequestDto): Promise<UniqueKeyDto> {
+  async login(req: AuthLoginRequestDto): Promise<AuthLoginResponseDto> {
     return this.userFindUsecase
       .login({
         email: req.email,
@@ -25,7 +27,7 @@ export class AuthLoginService {
         if (!passwordCheck)
           throw new HttpException(ApiErrorEnum.USER_NOT_FOUND, 400);
         return {
-          uniqueKey: user.uniqueKey,
+          accessToken: this.jwtService.sign({ uniqueKey: user.uniqueKey }),
         };
       });
   }
