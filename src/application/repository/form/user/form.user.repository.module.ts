@@ -8,4 +8,4 @@ import FormUserTypeOrmModule from '../../../../domain/model/typeorm/form/user/fo
   imports: [MysqlDbModule, forwardRef(() => FormUserTypeOrmModule)],
   exports: [FormUserRepository],
 })
-export default class FormUserRepositoryModule {}
+export default class FormUserRepositoryModule { }

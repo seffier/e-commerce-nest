@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { FormUserTypeorm } from '../form/user/formUser.typeorm';
+import { FormUserTypeorm } from '../form/user/form.user.typeorm';
 
 @Entity({
   name: 'user',
