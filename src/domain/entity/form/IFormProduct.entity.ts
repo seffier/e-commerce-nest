@@ -1,4 +1,4 @@
-import { IBaseSchemaEntity } from '../IBaseSchema.entity'
+import { IBaseSchemaEntity } from '../IBaseSchema.entity';
 
 export interface IFormProductEntity extends IBaseSchemaEntity {
   ProductName: string;
