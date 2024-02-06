@@ -9,4 +9,4 @@ import { CONNECTION } from '../../../../infrastructure/injection/constant.enum';
   ],
   exports: [TypeOrmModule],
 })
-export default class UserTypeOrmModule { }
+export default class UserTypeOrmModule {}
