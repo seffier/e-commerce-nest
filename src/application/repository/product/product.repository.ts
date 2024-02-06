@@ -1,8 +1,8 @@
-import { ProductTypeorm } from 'src/domain/model/typeorm/product/product.typeorm';
 import { SqlRepositoryImpl } from '../sql.repository.impl';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CONNECTION } from 'src/infrastructure/injection/constant.enum';
 import { Repository } from 'typeorm';
+import { CONNECTION } from '../../../infrastructure/injection/constant.enum';
+import { ProductTypeorm } from '../../../domain/model/typeorm/product/product.typeorm';
 
 export class ProductRepository extends SqlRepositoryImpl<ProductTypeorm> {
   constructor(

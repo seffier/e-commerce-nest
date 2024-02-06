@@ -1,5 +1,5 @@
-import { IBaseApplicationEntity } from 'src/domain/entity/application/IBaseApplication.entity';
 import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { IBaseApplicationEntity } from '../../../entity/application/IBaseApplication.entity';
 
 export abstract class ApplicationBase implements IBaseApplicationEntity {
   @PrimaryGeneratedColumn()

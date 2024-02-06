@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ApplicationProductCategoryTypeorm } from './application.product.category.typeorm';
-import { CONNECTION } from 'src/infrastructure/injection/constant.enum';
+import { CONNECTION } from '../../../../infrastructure/injection/constant.enum';
 
 @Module({
   imports: [

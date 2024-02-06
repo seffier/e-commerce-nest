@@ -3,7 +3,7 @@ import { ApiSecurity, ApiTags } from '@nestjs/swagger';
 import { AuthLoginService } from '../../service/login/auth.login.service';
 import { AuthLoginRequestDto } from '../../dto/request/login/auth.login.request.dto';
 import { AuthLoginResponseDto } from '../../dto/response/login/auth.login.response.dto';
-import { JwtAuthGuard } from 'src/infrastructure/jwt/jwt.guard';
+import { JwtAuthGuard } from '../../../../../infrastructure/jwt/jwt.guard';
 
 @ApiTags('Authorization')
 @Controller('auth')

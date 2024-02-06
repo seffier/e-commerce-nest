@@ -1,6 +1,6 @@
 import { Entity } from 'typeorm';
 import { ApplicationBase } from './application.base';
-import { IApplicationProductCategoryEntity } from 'src/domain/entity/application/IApplicationProductCategory.entity';
+import { IApplicationProductCategoryEntity } from '../../../entity/application/IApplicationProductCategory.entity';
 
 @Entity({
   name: 'applicationproductcategory',

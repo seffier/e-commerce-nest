@@ -1,5 +1,5 @@
-import { IProductEntity } from 'src/domain/entity/product/IProduct.entity';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { IProductEntity } from '../../../entity/product/IProduct.entity';
 
 @Entity({
   name: 'product',

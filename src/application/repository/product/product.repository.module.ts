@@ -1,7 +1,7 @@
 import { Module, forwardRef } from '@nestjs/common';
-import ProductTypeOrmModule from 'src/domain/model/typeorm/product/product.module';
-import MysqlDbModule from 'src/infrastructure/injection/module/mysql.db.module';
 import { ProductRepository } from './product.repository';
+import MysqlDbModule from '../../../infrastructure/injection/module/mysql.db.module';
+import ProductTypeOrmModule from '../../../domain/model/typeorm/product/product.module';
 
 @Module({
   imports: [MysqlDbModule, forwardRef(() => ProductTypeOrmModule)],

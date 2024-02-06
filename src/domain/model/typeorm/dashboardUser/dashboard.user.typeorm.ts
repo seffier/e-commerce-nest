@@ -1,4 +1,3 @@
-import { IDashboardUserEntity } from 'src/domain/entity/dashboardUser/IDashboardUser.entity';
 import {
   Column,
   Entity,
@@ -7,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { FormUserTypeorm } from '../form/user/form.user.typeorm';
+import { IDashboardUserEntity } from '../../../entity/dashboardUser/IDashboardUser.entity';
 
 @Entity({
   name: 'dashboarduser',

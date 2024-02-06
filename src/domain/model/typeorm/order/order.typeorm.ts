@@ -1,5 +1,5 @@
-import { IOrderEntity } from 'src/domain/entity/order/IOrder.entity';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { IOrderEntity } from '../../../entity/order/IOrder.entity';
 
 @Entity({
   name: 'order',
