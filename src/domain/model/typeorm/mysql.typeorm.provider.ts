@@ -5,12 +5,14 @@ import { ApplicationProductCategoryTypeorm } from './application/application.pro
 import { ApplicationProductBrandTypeorm } from './application/application.product.brand.typeorm';
 import { ApplicationOrderStateTypeorm } from './application/application.order.state.typeorm';
 import { ProductTypeorm } from './product/product.typeorm';
+import { OrderTypeorm } from './order/order.typeorm';
 
 export const MysqlTypeormProvider = [
   UserTypeorm,
   FormUserTypeorm,
   FormProductTypeorm,
   ProductTypeorm,
+  OrderTypeorm,
   ApplicationProductCategoryTypeorm,
   ApplicationProductBrandTypeorm,
   ApplicationOrderStateTypeorm,
