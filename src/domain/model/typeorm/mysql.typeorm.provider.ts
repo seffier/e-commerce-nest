@@ -6,9 +6,11 @@ import { ApplicationProductBrandTypeorm } from './application/application.produc
 import { ApplicationOrderStateTypeorm } from './application/application.order.state.typeorm';
 import { ProductTypeorm } from './product/product.typeorm';
 import { OrderTypeorm } from './order/order.typeorm';
+import { DashboardUserTypeorm } from './dashboardUser/dashboard.user.typeorm';
 
 export const MysqlTypeormProvider = [
   UserTypeorm,
+  DashboardUserTypeorm,
   FormUserTypeorm,
   FormProductTypeorm,
   ProductTypeorm,
